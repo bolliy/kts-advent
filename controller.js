@@ -92,8 +92,8 @@ function getAction(sheduler,actionDate)
 function loopProzess() {
   var dd;
   var mm;
-  var datum;
-  var licht;
+  //var datum;
+  //var licht;
   //datum = new Date();
   //console.log('start loopProzess...');
 
