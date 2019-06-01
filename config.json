@@ -1,0 +1,31 @@
+{
+  "debug": true,
+  "test_all_on": false,
+  "test_date" : "2019-12-02",
+  "sheduler":[
+   
+    {
+    "start": "00:00",
+    "stop": "10:00",
+	 "day": "sonntag"
+    },
+	{
+    "start": "18:48",
+    "stop": "24:00",
+  	"day": "sonntag"
+    },
+	{
+    "start": "00:00",
+    "stop": "07:45"
+	},
+	{
+    "start": "00:00",
+    "stop": "24:00"
+	}
+	
+  ],
+
+  "mqtt_ip": "192.168.179.27",
+  "port": "4747",
+  "ip": "0.0.0.0"
+}
