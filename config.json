@@ -1,7 +1,7 @@
 {
   "debug": true,
   "test_all_on": false,
-  "test_date" : "2020-01-01",
+  "test_date" : "",
   "days_less_24" : "OFF",
   "sheduler":[
 

@@ -20,12 +20,13 @@ const configObj = {
           {
              start: "00:00",
              stop: "07:45"
-         	},      
+         	},
          ],
          mqtt_ip: '192.168.179.27',
          debug: false,
          test_date: '',
          test_all_on: false,
+         days_less_24 : 'ON',
        }
       },(err, config) => {
        if (err) {
