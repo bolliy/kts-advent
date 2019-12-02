@@ -20,9 +20,11 @@ const mqttRouter = {
       client.on('connect', () => {
         console.log('mqtt connected');
         this.connected = true;
-        client.subscribe(_topic+'/s1/tele/LWT');  /* Online/offline */
-        /*client.subscribe(_topic+'/s1/tele/STATE');*/ /* ON/OFF */
-        client.subscribe(_topic+'/s1/stat/POWER'); /* ON/OFF */
+        for(var i = 1; i < 25;i++){
+          client.subscribe(_topic+'/s'+i+'/tele/LWT');  /* Online/offline */
+          /*client.subscribe(_topic+'/s1/tele/STATE');*/ /* ON/OFF */
+          client.subscribe(_topic+'/s'+i+'/stat/POWER'); /* ON/OFF */
+        };
       });
 
       client.on('disconnect', () => {

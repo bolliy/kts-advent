@@ -1,6 +1,6 @@
 {
   "name": "advent",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Adventslichtsteuerung für die KTS",
   "main": "controller.js",
   "scripts": {

@@ -51,7 +51,7 @@ function getAction(sheduler,actionDate)
       };
       var start = new Date(getDateStr(actionDate,item.start));
       var stop = new Date(getDateStr(actionDate,item.stop));
-      console.log('start '+start+' stop '+stop)
+      //console.log('start '+start+' stop '+stop)
       if (start && stop) {
         //gültiger Eintrag
         if (actionDate > start && actionDate<= stop ) {
@@ -92,8 +92,8 @@ function getAction(sheduler,actionDate)
 function loopProzess() {
   var dd;
   var mm;
-  var datum;
-  var licht;
+  //var datum;
+  //var licht;
   //datum = new Date();
   //console.log('start loopProzess...');
 
@@ -116,12 +116,21 @@ function loopProzess() {
 
     if (!tag) { tag=0 };
     //console.log('DoAction '+action+' von Licht '+tag);
+    //1..24
     for (i = 1; i <= 24; i++) {
-       if (i<=tag || tag===0) {
-       //if (i===tag || tag===0) {
-         loop(action,i);
+       if (tag===24 && config.get("days_less_24")==='OFF') {
+         //1..23 -> OFF
+         if (i===tag) {
+          loop(action,i);
+         } else {
+          loop('OFF',i);
+         }
        } else {
-         loop('OFF',i);
+         if (i<=tag || tag===0) {
+           loop(action,i);
+         } else {
+            loop('OFF',i);
+         }
        }
     };
   };
@@ -150,7 +159,7 @@ function loopProzess() {
     doAction('ON');
   } else {
     var action=getAction(config.get("sheduler"),datum);
-    console.log('Tag '+dd+' Action '+action);
+    console.log('Tag '+dd+' action '+action);
     doAction(action,dd);
   };
 };
